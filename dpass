@@ -1,4 +1,4 @@
 #!/bin/sh
 sleep 1 &
-dmenu -p "$1" -fn 'Zekton:pixelsize=22' -nf black -nb black -sf "#600000" -sb black <&-
+dmenu -p "$1" -nf black -nb black -sf "#600000" -sb black <&-
 printf \n
