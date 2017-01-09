@@ -1,6 +1,6 @@
 #!/bin/sh
 
-options='-i -fn 'Zekton:pixelsize=20' -nf #600000 -nb black -sf black -sb #600000'
+options='-i -nf #600000 -nb black -sf black -sb #600000'
 case $1 in
 	'root')
 	prompt='-p ROOT'
