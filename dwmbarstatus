@@ -1,7 +1,4 @@
 #!/bin/sh
-# This script will show date/time, mute/unmute, volume percent (alsa only)
-# and lock keys status (except for Scroll Lock because I don't have it).
-
 while :
 value=$(xset q |grep "LED" |cut -c66)
 case $value in
@@ -16,7 +13,6 @@ case $value in
 esac
 
 date=$(date +"%a %d %b - %H:%M")
-
 mute=$(amixer get Master |tail -n1 |awk '{ print $6 }' | tr -d [])
 case $mute in
 	on)
