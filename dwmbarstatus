@@ -1,6 +1,6 @@
 #!/bin/sh
-# This will show date/time, mute/unmute, volume percent (alsa only)
-# and lock keys status (except for Scroll Lock because I don' have it).
+# This script will show date/time, mute/unmute, volume percent (alsa only)
+# and lock keys status (except for Scroll Lock because I don't have it).
 
 while :
 value=$(xset q |grep "LED" |cut -c66)
