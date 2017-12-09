@@ -1,11 +1,4 @@
 #!/bin/sh
-# -nf, -nb and -sb must remain the same color. 
-# Otherwise your password will be visible.
-
-# Give it execution permissions. 
-# Add "export SUDO_ASKPASS=/bin/dpass" to your .bashrc file.
-# Then you can invoke programs using "sudo -A <program requiring sudo>".
-
 sleep 1 &
 dmenu -p "$1" -nf black -nb black -sf "#600000" -sb black <&-
 printf \n
