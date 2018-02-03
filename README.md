@@ -1,2 +1,2 @@
 # Repo
-Small collection of shell scripts that do small things. (Hosted here becuase I don't wanna loose them).
+Personal backup of shell scripts that do small (and useful) things for me.
