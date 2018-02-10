@@ -11,7 +11,7 @@ esac
 			'Shutdown') 
 				sudo -A poweroff ;;
 			'Logout') 
-				sudo -A pkill -KILL -u ${whoami};;
+				sudo -A pkill -KILL -u $(whoami);;
 			'Lock') 
 				slock ;;
 		esac
