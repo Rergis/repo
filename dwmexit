@@ -1,17 +1,14 @@
 #!/bin/sh
 color='-i -nf #600000 -nb black -sf black -sb #600000'
-case $1 in
-	'exit')
-	prompt='-p ?'
-	opt=$(printf "Reboot\nShutdown\nLogout\nLock" | dmenu $prompt $color) ;;
+prompt='-p ?'
+opt=$(printf "Reboot\nShutdown\nLogout\nLock" | dmenu $prompt $colo
+case $opt in
+	'Reboot') 
+		sudo reboot ;;
+	'Shutdown') 
+		sudo poweroff ;;
+	'Logout') 
+		sudo pkill -KILL -u $(whoami);;
+	'Lock') 
+		slock ;;
 esac
-		case $opt in
-			'Reboot') 
-				sudo -A reboot ;;
-			'Shutdown') 
-				sudo -A poweroff ;;
-			'Logout') 
-				sudo -A pkill -KILL -u $(whoami);;
-			'Lock') 
-				slock ;;
-		esac
