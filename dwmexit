@@ -1,14 +1,17 @@
 #!/bin/sh
-color='-i -nf #600000 -nb black -sf black -sb #600000'
+# Add:
+# <username> ALL=NOPASSWD: /sbin/poweroff, /sbin/reboot
+# to /etc/sudoers
+color='-i -nf darkred -nb black -sf black -sb darkred'
 prompt='-p ?'
-opt=$(printf "Reboot\nShutdown\nLogout\nLock" | dmenu $prompt $colo
+opt=$(printf "Logout\nReboot\nLock\nShutdown" | dmenu $prompt $color)
 case $opt in
+	'Logout') 
+		sudo pkill -KILL -u $(whoami) ;;
 	'Reboot') 
 		sudo reboot ;;
-	'Shutdown') 
-		sudo poweroff ;;
-	'Logout') 
-		sudo pkill -KILL -u $(whoami);;
 	'Lock') 
 		slock ;;
+	'Shutdown') 
+		sudo poweroff ;;
 esac
