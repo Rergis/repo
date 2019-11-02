@@ -3,8 +3,7 @@
 # <username> ALL=NOPASSWD: /sbin/poweroff, /sbin/reboot
 # to /etc/sudoers
 color='-i -nf darkred -nb black -sf black -sb darkred'
-prompt='-p ?'
-opt=$(printf "Logout\nReboot\nLock\nShutdown" | dmenu $prompt $color)
+opt=$(printf "Logout\nReboot\nLock\nShutdown" | dmenu $color)
 case $opt in
 	'Logout') 
 		sudo pkill -KILL -u $(whoami) ;;
