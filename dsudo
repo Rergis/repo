@@ -1,4 +1,4 @@
 #!/bin/sh
-sleep 1 &
+(:;:) &&
 dmenu -p "$1" -nf black -nb black -sf darkred -sb black <&-
 printf \n
