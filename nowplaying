@@ -1,0 +1,9 @@
+#!/bin/bash
+
+playing &
+
+while true ; do
+ mpc idle >/dev/null
+ [[ $(mpc cur)  ]] && herbe "$(mpc cur)" & pkill -SIGUSR1 herbe
+ [[ ! $(mpc cur)  ]] && :
+done

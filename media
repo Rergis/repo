@@ -1,0 +1,38 @@
+#!/bin/sh
+
+kill() {
+mpc -q stop
+mpc -q clear
+killall ffplay
+}
+
+menu='dmenu -i -p'
+opt="$(printf '#\nMusica\nRadio\nTv' | $menu Media)"
+
+case "$opt" in
+ #) `kill` ;;
+
+ Musica) `kill`
+  `mpc -q ls | mpc -q add`
+  `mpc -q play` ;;
+
+ Radio) `kill`
+   `mpc -q load radios`
+   `mpc -q play` ;;
+
+ Tv)
+  ch="$(printf '#\nTyCSports\nC26\nFr24\nRT' | $menu Tv)"
+  op="-cpuflags atom -fs -infbuf -loglevel quiet -fast"
+   case "$ch" in
+    #) `kill` ;;
+    TyCSports) `kill`
+     `ffplay $op https://d3055hobuue3je.cloudfront.net/out/v1/b841c366cbe540e6a106c3ba83e5c8d6/index_11.m3u8` ;;
+    C26) `kill`
+     `ffplay $op http://200.115.193.177/live/26hd-360/.m3u8` ;;
+    Fr24) `kill`
+     `ffplay $op http://f24hls-i.akamaihd.net/hls/live/520845/F24_ES_HI_HLS/04.m3u8` ;;
+    RT) `kill`
+     `ffplay $op https://rt-esp.gcdn.co/live/rtesp/playlist_800Kb.m3u8` ;;
+   esac
+
+esac

@@ -1,0 +1,14 @@
+#!/bin/sh
+# Show menu to screenshot options (uses dmenu + scrot + fswebcam).
+
+font='-fn monospace:size=13'
+name='%-S.png'
+menu=$(printf "#\nScreen\nWindow\nSelect\nSelfie" | dmenu -p 'ScreenShot' $font)
+
+case $menu in
+ #) : ;;
+ Screen) scrot -d 1 -q 100 $name -e 'mv $f ~/image' ;;
+ Window) scrot -d 1 -u -q 100 $name -e 'mv $f ~/image' ;;
+ Select) scrot -fl style=solid,width=2,color="#0088AA" -s -q 100 $name -e 'mv $f ~/image' ;;
+ Selfie) fswebcam -qF 15 --no-banner -r 640x480 --png -1 ~/image/photo.png ;;
+esac

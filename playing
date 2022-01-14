@@ -1,0 +1,4 @@
+#!/bin/bash
+
+[[ $(mpc cur) ]] && herbe "$(mpc cur)" & pkill -SIGUSR1 herbe
+[[ ! $(mpc cur) ]] && :
