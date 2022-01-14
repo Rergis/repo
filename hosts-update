@@ -1,4 +1,5 @@
 #!/bin/sh
+# Let's block annoying ads via Steven Black's hosts file! (must be root)
 
 if [[ $(id -u) != 0 ]]; then
    printf 'Must be superuser! Exit.\n'
