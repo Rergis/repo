@@ -1,4 +1,5 @@
 #!/bin/bash
+# Invokes playing script & open a loop to notify song name whenever it changes.
 
 playing &
 
