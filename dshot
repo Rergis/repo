@@ -1,5 +1,5 @@
 #!/bin/sh
-# Show menu to screenshot options (uses dmenu + scrot + fswebcam).
+# Screenshot/Selfie (uses dmenu + scrot + fswebcam).
 
 font='-fn monospace:size=13'
 name='%-S.png'
