@@ -1,4 +1,5 @@
 #!/bin/sh
+# dmenu wrapper to listen to music, selected radio stations or watch selected tv channels.
 
 kill() {
 mpc -q stop
