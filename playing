@@ -1,4 +1,5 @@
 #!/bin/bash
+# When invoked, show current playing song (mpd) in a notification (herbe)
 
 [[ $(mpc cur) ]] && herbe "$(mpc cur)" & pkill -SIGUSR1 herbe
 [[ ! $(mpc cur) ]] && :
