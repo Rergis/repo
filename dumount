@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#### DO NOT TOUCH
+for i in $(mount | grep usb | cut -d " " -f 1); do
+    devices="${devices}${i}\n"
+done
+
+device=$(printf "${devices}" | dmenu -p Umount)
+
+if [ -n "$device" ]; then
+    doas umount $device
+fi
