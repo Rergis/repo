@@ -1,11 +1,9 @@
 #!/bin/bash
-
-##### CONFIG
+# Mount devices via dmenu
 
 DEVS=( "sd" )
 BLOCK=( "sda" )
 
-#### DO NOT TOUCH
 c=0
 for i in $(mount | cut -d " " -f 1); do
     mounted[$c]="$i"
