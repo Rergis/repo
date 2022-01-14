@@ -1,4 +1,5 @@
 #!/bin/sh
+# Show logout/power options via dmenu
 
 fmt='-b -i -nf red -nb black -sf black -sb red -fn monospace:size=13'
 menu=$(printf "#\nLock\nReboot\nShutdown" | dmenu $fmt)
