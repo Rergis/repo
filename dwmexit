@@ -1,16 +1,11 @@
 #!/bin/sh
-# Add:
-# <username> ALL=NOPASSWD: /sbin/poweroff, /sbin/reboot
-# to /etc/sudoers
-color='-i -nf darkred -nb black -sf black -sb darkred'
-opt=$(printf "Logout\nReboot\nLock\nShutdown" | dmenu $color)
-case $opt in
-	'Logout') 
-		sudo pkill -KILL -u $(whoami) ;;
-	'Reboot') 
-		sudo reboot ;;
-	'Lock') 
-		slock ;;
-	'Shutdown') 
-		sudo poweroff ;;
-esac
+
+fmt='-b -i -nf red -nb black -sf black -sb red -fn monospace:size=13'
+menu=$(printf "#\nLock\nReboot\nShutdown" | dmenu $fmt)
+
+ case $menu in
+  #) : ;;
+  Lock) slock ;;
+  Reboot) doas reboot ;;
+  Shutdown) doas poweroff ;;
+ esac
