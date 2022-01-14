@@ -1,4 +1,5 @@
 #!/bin/bash
+# Unmount mounted devices via dmenu
 
 #### DO NOT TOUCH
 for i in $(mount | grep usb | cut -d " " -f 1); do
